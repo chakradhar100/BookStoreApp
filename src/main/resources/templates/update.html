@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Update Book</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/BookStore/update/{id}(id=${book.id})}" th:object="${book}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="bookName" class="col-form-label">Book Name</label> 
+                              <input type="text" th:field="*{bname}" class="form-control" id="bname" placeholder="BookName">
+                               <span th:if="${#fields.hasErrors('bname')}" th:errors="*{bname}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="bookPrice" class="col-form-label">Book Price</label> 
+                              <input type="text" th:field="*{bprice}" class="form-control" id="bprice" placeholder="Book Price">
+                               <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="bookLanguage" class="col-form-label">Book Language</label>
+                               <input type="text" th:field="*{blang}" class="form-control" id="blang" placeholder="Book Langauage">
+                               <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="bookDate" class="col-form-label">Book Published Date</label> 
+                              <input type="text" th:field="*{bdate}" class="form-control" id="bdate" placeholder="Book Date">
+                               <span th:if="${#fields.hasErrors('bdate')}" th:errors="*{bdate}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="authCode" class="col-form-label">Author's Code</label> 
+                              <input type="text" th:field="*{authcode}" class="form-control" id="authcode" placeholder="Author Code">
+                               <span th:if="${#fields.hasErrors('authcode')}" th:errors="*{authcode}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="authFName" class="col-form-label">Author's First Name</label> 
+                              <input type="text" th:field="*{authfname}" class="form-control" id="authfname" placeholder="authfname">
+                               <span th:if="${#fields.hasErrors('authfname')}" th:errors="*{authfname}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="authLName" class="col-form-label">Author Last Name</label> 
+                              <input type="text" th:field="*{authlname}" class="form-control" id="authlname" placeholder="Author Last Name">
+                               <span th:if="${#fields.hasErrors('authlname')}" th:errors="*{authlname}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="pcode" class="col-form-label">Publisher's Code</label> 
+                              <input type="text" th:field="*{pcode}" class="form-control" id="pcode" placeholder="Publisher Code">
+                               <span th:if="${#fields.hasErrors('pcode')}" th:errors="*{pcode}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="pfname" class="col-form-label">Publisher's First Name</label> 
+                              <input type="text" th:field="*{pfname}" class="form-control" id="pfname" placeholder="Publisher's First Name">
+                               <span th:if="${#fields.hasErrors('pfname')}" th:errors="*{pfname}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="plname" class="col-form-label">Publisher's Last Name</label> 
+                              <input type="text" th:field="*{plname}" class="form-control" id="plname" placeholder="Publisher's Last Name">
+                               <span th:if="${#fields.hasErrors('plname')}" th:errors="*{plname}" class="text-danger"></span>
+                              </div>
+                              
+                              
+                              <div class="form-group col-md-8">
+                                <label for="pcountry" class="col-form-label">Publisher Country</label> 
+                              <input type="text" th:field="*{pcountry}" class="form-control" id="pcountry" placeholder="Publisher's Country">
+                               <span th:if="${#fields.hasErrors('pcountry')}" th:errors="*{pcountry}" class="text-danger"></span>
+                              </div>
+                              
+                              
+
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Student">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
