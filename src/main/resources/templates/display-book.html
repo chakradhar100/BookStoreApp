@@ -15,7 +15,7 @@
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
-                <div th:switch="${books}" class="container my-5">
+                <div th:switch="${Books1}" class="container my-5">
                     <p class="my-5">
                         <a href="/BookStore/signup" class="btn btn-primary"><i
        class="fas fa-user-plus ml-2"> Add Book</i></a>
@@ -26,9 +26,10 @@
                             <table class="table table-striped table-responsive-md">
                                 <thead>
                                     <tr>
+                                        <th>Book Code</th>
                                         <th>Book Name</th>
                                         <th>Book Price</th>
-                                        <th>Book lang</th>
+                                        <th>Book Lang</th>
                                         <th>Book Date</th>
                                         <th>Author Code</th>
                                         <th>Author First Name</th>
@@ -37,25 +38,24 @@
                                         <th>Publisher First Name</th>
                                         <th>Publisher Last Name</th>
                                         <th>Publisher Country</th>
-                                        <th>Edit</th>
-                                        <th>Update</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="book : ${books}">
-                                        <td th:text="${book.bname}"></td>
-                                        <td th:text="${book.bprice}"></td>
-                                        <td th:text="${book.blang}"></td>
-                                        <td th:text="${book.bdate}"></td>
-                                        <td th:text="${book.authcode}"></td>
-                                        <td th:text="${book.authfname }"></td>
-                                        <td th:text="${book.authlname}"></td>
-                                        <td th:text="${book.pcode"></td>
-                                        <td th:text="${book.pfname}"></td>
-                                        <td th:text="${book.plname}"></td>
-                                        <td th:text="${book.pcountry}"></td>
-                                        <td><a th:href="@{/BookStore/edit/{id}(id=${book.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
-                                        <td><a th:href="@{/BookStore/delete/{id}(id=${book.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                    <tr th:each="books : ${Books1}">
+                                        <td th:text="${books.bcode}"></td>
+                                        <td th:text="${books.bname}"></td>
+                                        <td th:text="${books.bprice}"></td>
+                                        <td th:text="${books.blang}"></td>
+                                        <td th:text="${books.bdate}"></td>
+                                        <td th:text="${books.authcode}"></td>
+                                        <td th:text="${books.authfname}"></td>
+                                        <td th:text="${books.authlname}"></td>
+                                        <td th:text="${books.pcode}"></td>
+                                        <td th:text="${books.pfname}"></td>
+                                        <td th:text="${books.plname}"></td>
+                                        <td th:text="${books.pcountry}"></td>
+                                        <td><a th:href="@{/BookStore/edit/{id}(id=${books.bcode})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                        <td><a th:href="@{/BookStore/delete/{id}(id=${books.bcode})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>

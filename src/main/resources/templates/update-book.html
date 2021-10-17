@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Update Book</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/BookStore/update/{id}(id=${books.bcode})}" th:object="${books}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Enter Book Code</label><br>
+                                <input type="text" th:field="*{bcode}" value="bcode"><br>
+                                <span th:if="${#fields.hasErrors('bcode')}" th:errors="*{bcode}" class="text-danger">L</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Book Price</label><br>
+                                <input type="text" th:field="*{bprice}" value="bprice"><br>
+                                <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger">A</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Book Name</label><br>
+                                <input type="text" th:field="*{bname}" value="bname"><br>
+                                <span th:if="${#fields.hasErrors('bname')}" th:errors="*{bname}" class="text-danger">B</span>
+                            </div>
+                            
+                            <div class="form-group col-md-8">
+                                <label>Enter Book Lang</label><br>
+                                <input type="text" th:field="*{blang}" value="blang"><br>
+                                <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger">C</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Book Date</label><br>
+                                <input type="text" th:field="*{bdate}" value="bdate"><br>
+                                <span th:if="${#fields.hasErrors('bdate')}" th:errors="*{bdate}" class="text-danger">D</span>
+                            </div>
+                            <div class="form-group col-md-8">  
+                                <label>Enter Author Code</label><br>
+                                <input type="text" th:field="*{authcode}" value="authcode"><br>
+                                <span th:if="${#fields.hasErrors('authcode')}" th:errors="*{authcode}" class="text-danger">E</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Author First Name</label><br>
+                                <input type="text" th:field="*{authfname}" value="authfname"><br>
+                                <span th:if="${#fields.hasErrors('authfname')}" th:errors="*{authfname}" class="text-danger">F</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Author Last Name</label><br>
+                                <input type="text" th:field="*{authlname}" value="authlname"><br>
+                                <span th:if="${#fields.hasErrors('authlname')}" th:errors="*{authlname}" class="text-danger">G</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Publisher Code</label><br>
+                                <input type="text" th:field="*{pcode}" value="pcode"><br>
+                                <span th:if="${#fields.hasErrors('pcode')}" th:errors="*{pcode}" class="text-danger">H</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Publisher First Name</label><br>
+                                <input type="text" th:field="*{pfname}" value="pfname"><br>
+                                <span th:if="${#fields.hasErrors('pfname')}" th:errors="*{pfname}" class="text-danger">I</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Publisher Last Name</label><br>
+                                <input type="text" th:field="*{plname}" value="plname"><br>
+                                <span th:if="${#fields.hasErrors('plname')}" th:errors="*{plname}" class="text-danger">J</span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Enter Publisher Country</label><br>
+                                <input type="text" th:field="*{pcountry}" value="pcountry"><br>
+                                <span th:if="${#fields.hasErrors('pcountry')}" th:errors="*{pcountry}" class="text-danger">K</span>
+                            </div>
+                                
+
+
+
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Student">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

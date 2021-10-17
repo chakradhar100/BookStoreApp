@@ -19,11 +19,11 @@ import repository.BookRepository;
 
 
 @Controller
-@RequestMapping("/BookStore/")
+@RequestMapping("/BookStore")
 public class BooksController {
 
     
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     @Autowired
     public BooksController(BookRepository bookRepository)
@@ -32,59 +32,59 @@ public class BooksController {
 
     }
 
-    @GetMapping("signup")
+    @GetMapping("/signup")
     public String showSignUpForm(Books book) {
         System.out.println("entered signup ");
-        return "Input";
+        return "add-book";
     }
 
-    @GetMapping("list")
+    @GetMapping("/list")
     public String showUpdateForm(Model model) {
-        System.out.println("entered ");
-        model.addAttribute("Books", bookRepository.findAll());
-        return "display";
+        System.out.println("entered Display");
+        model.addAttribute("Books1", bookRepository.findAll());
+        return "display-book";
     }
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public String addStudent(@Valid Books book, BindingResult result, Model model) {
-        System.out.println("entered ");
+        System.out.println("entered Add");
         if (result.hasErrors()) {
-            return "Input";
+            return "add-book";
         }
 
         bookRepository.save(book);
         return "redirect:list";
     }
 
-    @GetMapping("edit/{id}")
+    @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
-        System.out.println("entered ");
+        System.out.println("entered edit ");
         Books book = bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Book Id:" + id));
         model.addAttribute("book", book);
-        return "update";
+        return "update-book";
     }
 
-    @PostMapping("update/{id}")
+    @PostMapping("/update/{id}")
     public String updateStudent(@PathVariable("id") long id, @Valid Books book, BindingResult result,Model model) 
     {
-        System.out.println("entered ");
+        System.out.println("entered update ");
         if (result.hasErrors()) {
             book.setBcode(id);
-            return "update";
+            return "update-book";
         }
 
         bookRepository.save(book);
         model.addAttribute("books", bookRepository.findAll());
-        return "display";
+        return "display-book";
     }
 
-    @GetMapping("delete/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteStudent(@PathVariable("id") long id, Model model) {
-        System.out.println("entered ");
+        System.out.println("entered  delete");
         Books book = bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         bookRepository.delete(book);
         model.addAttribute("books", bookRepository.findAll());
-        return "display";
+        return "display-book";
     }
 
     

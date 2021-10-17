@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>
+            Add Books Details
+        </title>
+    </head>
+    <body>
+        <form th:action="@{/BookStore/add}" th:object="${books}" method="POST">
+            <label>Enter Book Code</label><br>
+            <input type="text" th:field="*{bcode}" value="bcode"><br>
+            <span th:if="${#fields.hasErrors('bcode')}" th:errors="*{bcode}" class="text-danger">L</span>
+            <label>Enter Book Price</label><br>
+            <input type="text" th:field="*{bprice}" value="bprice"><br>
+            <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger">A</span>
+            <label>Enter Book Name</label><br>
+            <input type="text" th:field="*{bname}" value="bname"><br>
+            <span th:if="${#fields.hasErrors('bname')}" th:errors="*{bname}" class="text-danger">B</span>
+            <label>Enter Book Lang</label><br>
+            <input type="text" th:field="*{blang}" value="blang"><br>
+            <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger">C</span>
+            <label>Enter Book Date</label><br>
+            <input type="text" th:field="*{bdate}" value="bdate"><br>
+            <span th:if="${#fields.hasErrors('bdate')}" th:errors="*{bdate}" class="text-danger">D</span>
+            <label>Enter Author Code</label><br>
+            <input type="text" th:field="*{authcode}" value="authcode"><br>
+            <span th:if="${#fields.hasErrors('authcode')}" th:errors="*{authcode}" class="text-danger">E</span>
+            <label>Enter Author First Name</label><br>
+            <input type="text" th:field="*{authfname}" value="authfname"><br>
+            <span th:if="${#fields.hasErrors('authfname')}" th:errors="*{authfname}" class="text-danger">F</span>
+            <label>Enter Author Last Name</label><br>
+            <input type="text" th:field="*{authlname}" value="authlname"><br>
+            <span th:if="${#fields.hasErrors('authlname')}" th:errors="*{authlname}" class="text-danger">G</span>
+            <label>Enter Publisher Code</label><br>
+            <input type="text" th:field="*{pcode}" value="pcode"><br>
+            <span th:if="${#fields.hasErrors('pcode')}" th:errors="*{pcode}" class="text-danger">H</span>
+            <label>Enter Publisher First Name</label><br>
+            <input type="text" th:field="*{pfname}" value="pfname"><br>
+            <span th:if="${#fields.hasErrors('pfname')}" th:errors="*{pfname}" class="text-danger">I</span>
+            <label>Enter Publisher Last Name</label><br>
+            <input type="text" th:field="*{plname}" value="plname"><br>
+            <span th:if="${#fields.hasErrors('plname')}" th:errors="*{plname}" class="text-danger">J</span>
+            <label>Enter Publisher Country</label><br>
+            <input type="text" th:field="*{pcountry}" value="pcountry"><br>
+            <span th:if="${#fields.hasErrors('pcountry')}" th:errors="*{pcountry}" class="text-danger">K</span>
+
+            <input type="submit"  value="Add Student">
+        </form>
+    </body>
+
+</html>
