@@ -18,11 +18,11 @@
                 <div class="col-md-8">
                     <form action="#" th:action="@{/BookStore/update/{id}(id=${book.bcode})}" th:object="${books}" method="POST">
                         <div class="row">
-                            <div class="form-group col-md-6">
+                        <!--  <div class="form-group col-md-6">
                                 <label>Enter Book Code</label><br>
                                 <input type="text" th:field="*{bcode}" value="bcode"><br>
                                 <span th:if="${#fields.hasErrors('bcode')}" th:errors="*{bcode}" class="text-danger">L</span>
-                            </div>
+                            </div>-->
                             <div class="form-group col-md-8">
                                 <label>Enter Book Price</label><br>
                                 <input type="text" th:field="*{bprice}" value="bprice"><br>

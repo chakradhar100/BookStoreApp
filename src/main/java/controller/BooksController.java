@@ -61,6 +61,7 @@ public class BooksController {
         System.out.println("entered edit ");
         Books book = bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Book Id:" + id));
         model.addAttribute("book", book);
+        bookRepository.delete(book);
         return "update-book";
     }
 
@@ -73,9 +74,9 @@ public class BooksController {
             return "update-book";
         }
 
+        book.setBcode(id);
         bookRepository.save(book);
-        model.addAttribute("books", bookRepository.findAll());
-        return "display-book";
+        return "redirect:/BookStore/list";
     }
 
     @GetMapping("/delete/{id}")
@@ -83,8 +84,8 @@ public class BooksController {
         System.out.println("entered  delete");
         Books book = bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         bookRepository.delete(book);
-        model.addAttribute("books", bookRepository.findAll());
-        return "display-book";
+        
+        return "redirect:/BookStore/list";
     }
 
     
