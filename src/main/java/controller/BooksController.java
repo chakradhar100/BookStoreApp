@@ -57,7 +57,7 @@ public class BooksController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+    public String showUpdateForm(@PathVariable("id") long id,Books book1, Model model) {
         System.out.println("entered edit ");
         Books book = bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Book Id:" + id));
         model.addAttribute("book", book);
