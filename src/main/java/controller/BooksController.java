@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.data.domain.Sort;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -55,6 +57,19 @@ public class BooksController {
         bookRepository.save(book);
         return "redirect:list";
     }
+
+    @GetMapping("/sort")
+    public String sortBy( Model model)
+    {
+        System.out.println("entered sort operation");
+        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Direction.ASC,"bname"));
+        model.addAttribute("Books1", booklist);
+
+
+        return "display-book";
+    }
+
+    
 
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id,Books book1, Model model) {
