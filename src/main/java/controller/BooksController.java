@@ -59,10 +59,10 @@ public class BooksController {
     }
 
     @GetMapping("/sort")
-    public String sortBy( Model model)
+    public String sortBy(@RequestParam("col-name")String  colname, Model model)
     {
         System.out.println("entered sort operation");
-        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Direction.ASC,"bname"));
+        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Direction.ASC,colname));
         model.addAttribute("Books1", booklist);
 
 

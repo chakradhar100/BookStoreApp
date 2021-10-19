@@ -20,9 +20,9 @@
       
       <a href="/BookStore/signup"><button type="submit" class="signupbtn">Add Books</button></a>
       <a href="/BookStore/list"><button type="submit" class="signupbtn">Display Books</button></a>
-      <form th:action="@{/BookStore/sort}" method="GET">
+      <form action="/BookStore/sort" method="GET">
         <label>Enter Sort Parameter</label><br>
-        <input type=" text" value="col-name"> <br>
+        <input type=" text" value="col-name">
         <input type="submit" value="submit">
       </form>
      
