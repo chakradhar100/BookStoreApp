@@ -124,7 +124,7 @@ body {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: #000099 ;<!-- 0px 8px 16px 0px rgba(0,0,0,0.2);   -->
+  box-shadow: #000099 ;
   z-index: 1;
 }
 
@@ -173,52 +173,45 @@ body {
   <center>
     <div class="clearfix">
       <div class="ex1">
-      <h1 align=text-center style ="color: #003366">Books Details</h1>
-      <br>
-      <a href="/BookStore/signup"><button type="submit" class="signupbtn">Add Books</button></a>
-      <a href="/BookStore/list"><button type="submit" class="signupbtn">Display Books</button></a>
-      <br>
-	  <br>
-    <form th:action="@{/BookStore/sort}" method="GET">
-	<h3 style="color: #003366">Select Sort Parameter	</h3>
-      <label></label>
+        <h1 align=text-center style ="color: #003366">Books Details</h1>
+        <br>
+        <a href="/BookStore/signup"><button type="submit" class="signupbtn">Add Books</button></a>
+        <a href="/BookStore/list"><button type="submit" class="signupbtn">Display Books</button></a>
+        <br>
+	      <br>
+        <form th:action="@{/BookStore/sort}" method="GET">
+            <h3 style="color: #003366">Select Sort Parameter</h3>
+            <label></label>
 	  
-	<!-- 		drop down
-											
-	<center>
-	<div class="dropdown">
-		<button class="dropbtn">Select</button>
-			<div class="dropdown-content">
-				<a href="#">By Name</a>
-				<a href="#">By Price</a>
-				<a href="#">By Code</a>
-		</div>
-	</div>
-	</center>
-	<br>
-	<!--
-      <input type=" text" value="col-name"> <br><br>		
-      <input type="submit" value="submit">
-    </form>
-	-->
-	<form action="">
+	 
+	        
 	
-		<select name="sort" id="cars">
+		        <select name="sort" id="cars">
 		
-			<option value="bname">By Name</option>
-			<option value="bprice">By Price</option>
+		      	  <option value="bname">By Name</option>
+			        <option value="bprice">By Price</option>
 		
     
-		</select>
-		<br><br>
-		<input type="submit" value="Submit">
-	</form>
+	          </select>
+		        <br><br>
+		        <input type="submit" value="Submit">
+	        </form>
+
+
+          <form action="" th:action="@{/BookStore/search}" method="GET">
+            <label>Enter Book To Search</label><br>
+            <input type="text" name="book" value="bname"><br>
+            <input type="submit" value="Search">
+          </form>
+
+
+          
 	
 	
 	
 	
-		</div>
+		  </div>
     </div>
-    </center>
+  </center>
   </body>
 </html>

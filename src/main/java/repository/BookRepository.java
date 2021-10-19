@@ -9,6 +9,8 @@ import model.Books;
 @Repository
 public interface BookRepository extends JpaRepository<Books , Long> {
 
+    List<Books> findByBnameIgnoreCase(String bname);
+
     
 
 

@@ -5,10 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.data.domain.Sort;
@@ -66,6 +66,16 @@ public class BooksController {
         model.addAttribute("Books1", booklist);
 
 
+        return "display-book";
+    }
+
+    @GetMapping("/search")
+    public String searchBy(@RequestParam("book")String book, Model model)
+    {
+        System.out.println("entered Search Operation");
+        System.out.println(book);
+        List<Books> booklist = bookRepository.findByBnameIgnoreCase(book);
+        model.addAttribute("Books1", booklist);
         return "display-book";
     }
 

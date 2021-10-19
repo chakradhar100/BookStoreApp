@@ -17,25 +17,34 @@ public class Books {
     @NotEmpty
 	@GeneratedValue(strategy=GenerationType.IDENTITY)   
     private long bcode ;     
+
     @NotEmpty
     private int bprice ;   
+
     @NotEmpty
     private String bname ;
+
     @NotEmpty    
     private String blang;   
      
     @NotEmpty 
-    private String authcode ;   
+    private String authcode ;  
+
     @NotEmpty
     private String authfname ;    
+
     @NotEmpty
     private String authlname ;    
+
     @NotEmpty
     private String pcode ;   
+
     @NotEmpty
     private String pfname;   
+
     @NotEmpty 
     private String plname ;    
+    
     @NotEmpty
     private String pcountry ;
 
