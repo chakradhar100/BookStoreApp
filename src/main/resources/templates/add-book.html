@@ -27,7 +27,7 @@
                             </div> -->
                             <div class="form-group col-md-8">
                                 <label>Enter Book Price</label><br>
-                                <input type="text" th:field="*{bprice}" value="bprice"><br>
+                                <input type="number" th:field="*{bprice}" value="bprice"><br>
                                 <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger">A</span>
                             </div>
                             <div class="form-group col-md-8">
@@ -41,11 +41,7 @@
                                 <input type="text" th:field="*{blang}" value="blang"><br>
                                 <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger">C</span>
                             </div>
-                            <div class="form-group col-md-8">
-                                <label>Enter Book Date</label><br>
-                                <input type="text" th:field="*{bdate}" value="bdate"><br>
-                                <span th:if="${#fields.hasErrors('bdate')}" th:errors="*{bdate}" class="text-danger">D</span>
-                            </div>
+
                             <div class="form-group col-md-8">  
                                 <label>Enter Author Code</label><br>
                                 <input type="text" th:field="*{authcode}" value="authcode"><br>

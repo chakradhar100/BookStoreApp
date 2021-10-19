@@ -18,13 +18,12 @@ public class Books {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)   
     private long bcode ;     
     @NotEmpty
-    private String bprice ;   
+    private int bprice ;   
     @NotEmpty
     private String bname ;
     @NotEmpty    
     private String blang;   
-    @NotEmpty
-    private String bdate ;   
+     
     @NotEmpty 
     private String authcode ;   
     @NotEmpty
@@ -42,13 +41,12 @@ public class Books {
 
 public Books() {
 }
-public Books(long bcode,String bprice, String bname, String blang, String bdate, String authcode, String authfname,
+public Books(long bcode,int bprice, String bname, String blang, String authcode, String authfname,
         String authlname, String pcode, String pfname, String plname, String pcountry) {
     this.bcode=bcode;
     this.bprice = bprice;
     this.bname = bname;
     this.blang = blang;
-    this.bdate = bdate;
     
     this.authcode = authcode;
     this.authfname = authfname;
@@ -70,10 +68,10 @@ public void setBcode(long bcode) {
 }
 
 
-public String getBprice() {
+public int getBprice() {
     return bprice;
 }
-public void setBprice(String bprice) {
+public void setBprice(int bprice) {
     this.bprice = bprice;
 }
 
@@ -94,12 +92,7 @@ public void setBlang(String blang) {
 }
 
 
-public String getBdate() {
-    return bdate;
-}
-public void setBdate(String bdate) {
-    this.bdate = bdate;
-}
+
 
 
 public String getAuthcode() {
