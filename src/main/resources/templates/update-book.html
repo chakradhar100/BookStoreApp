@@ -8,11 +8,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<style>
+	body {
+  font-family: "Sofia", sans-serif;
+}
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #00008B;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+div.ex1{
+	style="width: 50%; 
+	margin: 0 auto 0 420px;"
+}
+
+input[type=text]{
+	border-radius: 10px;
+}
+button{
+	border-radius: 10px;
+}
+	</style>
 </head>
 
 <body>
+	
+	<div class="navbar">
+	<a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+	</div>
     <div class="container my-5">
-        <h3> Update Book</h3>
+    <center>    <h3 style ="color: #003366"> Update Book</h3> </center>
         <div class="card">
             <div class="card-body">
                 <div class="col-md-8">
@@ -23,54 +78,54 @@
                                 <input type="text" th:field="*{bcode}" value="bcode"><br>
                                 <span th:if="${#fields.hasErrors('bcode')}" th:errors="*{bcode}" class="text-danger">L</span>
                             </div>-->
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Price</label><br>
                                 <input type="text" th:field="*{bprice}" value="bprice"><br>
                                 <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger">A</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Name</label><br>
                                 <input type="text" th:field="*{bname}" value="bname"><br>
                                 <span th:if="${#fields.hasErrors('bname')}" th:errors="*{bname}" class="text-danger">B</span>
                             </div>
                             
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Lang</label><br>
                                 <input type="text" th:field="*{blang}" value="blang"><br>
                                 <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger">C</span>
                             </div>
                             
-                            <div class="form-group col-md-8">  
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">  
                                 <label>Enter Author Code</label><br>
                                 <input type="text" th:field="*{authcode}" value="authcode"><br>
                                 <span th:if="${#fields.hasErrors('authcode')}" th:errors="*{authcode}" class="text-danger">E</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Author First Name</label><br>
                                 <input type="text" th:field="*{authfname}" value="authfname"><br>
                                 <span th:if="${#fields.hasErrors('authfname')}" th:errors="*{authfname}" class="text-danger">F</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Author Last Name</label><br>
                                 <input type="text" th:field="*{authlname}" value="authlname"><br>
                                 <span th:if="${#fields.hasErrors('authlname')}" th:errors="*{authlname}" class="text-danger">G</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Code</label><br>
                                 <input type="text" th:field="*{pcode}" value="pcode"><br>
                                 <span th:if="${#fields.hasErrors('pcode')}" th:errors="*{pcode}" class="text-danger">H</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher First Name</label><br>
                                 <input type="text" th:field="*{pfname}" value="pfname"><br>
                                 <span th:if="${#fields.hasErrors('pfname')}" th:errors="*{pfname}" class="text-danger">I</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Last Name</label><br>
                                 <input type="text" th:field="*{plname}" value="plname"><br>
                                 <span th:if="${#fields.hasErrors('plname')}" th:errors="*{plname}" class="text-danger">J</span>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Country</label><br>
                                 <input type="text" th:field="*{pcountry}" value="pcountry"><br>
                                 <span th:if="${#fields.hasErrors('pcountry')}" th:errors="*{pcountry}" class="text-danger">K</span>
@@ -79,8 +134,8 @@
 
 
 
-                            <div class="form-group col-md-8">
-                                <input type="submit" class="btn btn-primary" value="Update Student">
+                            <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
+                                <input type="submit" class="btn btn-primary" value="Update Book">
                             </div>
                         </div>
                     </form>
