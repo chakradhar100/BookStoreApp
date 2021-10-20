@@ -23,6 +23,7 @@
   cursor: pointer;
   width: 60%;
   opacity: 0.9;
+  border-radius:10px;
 }
 
 button:hover {
@@ -144,13 +145,52 @@ body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #00008B;
+  border: none;
+  color: white;
+  padding: 10px 26px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover {
+  opacity:1;
+  background-color: #4169E1;
+  font-size: 120%;
+  box-shadow: 0 0 1px 1px red;
+  
+}
+
+select {
+border-radius: 10px;
+  width: 60%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input[type=text] {
+  background-color: white;
+  border-radius:10px;
+  background-position: 18px 14px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  padding: 14px;
+}
+
 	</style>
   </head>
   <body class="text-center">
   
   <div class="navbar">
 	<a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-	<a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+
 	<!--
 	<a href="#"><i class="fa fa-fw fa-envelope"></i> Update</a>
 	<a href="#"><i class="fa fa-fw fa-user"></i> Remove</a>
@@ -194,13 +234,15 @@ body {
     
 	          </select>
 		        <br><br>
-		        <input type="submit" value="Submit">
+		        <input type="submit" value="Sort">
 	        </form>
 
-
+			
+			<br>
           <form action="" th:action="@{/BookStore/search}" method="GET">
-            <label>Enter Book To Search</label><br>
-            <input type="text" name="book" value="bname"><br>
+		  
+            <label><h3>Enter Book To Search</h3></label><br>
+            <input type="text" name="book" placeholder="enter book name"><br>
             <input type="submit" value="Search">
           </form>
 

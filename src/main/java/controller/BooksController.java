@@ -62,7 +62,7 @@ public class BooksController {
     public String sortBy(@RequestParam("sort")String  colname, Model model)
     {
         System.out.println("entered sort operation");
-        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Direction.ASC,colname));
+        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Order.asc(colname).ignoreCase()));
         model.addAttribute("Books1", booklist);
 
 

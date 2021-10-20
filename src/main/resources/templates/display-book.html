@@ -9,9 +9,63 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+
+    <style>body {
+        font-family: "Sofia", sans-serif;
+      }
+      
+      /* Style the navigation bar */
+      .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+      }
+      
+      /* Navbar links */
+      .navbar a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      /* Navbar links on mouse-over */
+      .navbar a:hover {
+        background-color: #000;
+      }
+      
+      /* Current/active navbar link */
+      .active {
+        background-color: #00008B;
+      }
+      
+      /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+      @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          display: block;
+        }
+      }
+      
+      body {
+        font-family: "Sofia", sans-serif;
+      }
+      
+      </style>
+
+    
+
+
+
 </head>
 
 <body>
+
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    </div>
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
@@ -20,10 +74,7 @@
                         <a href="/BookStore/signup" class="btn btn-primary"><i
        class="fas fa-user-plus ml-2"> Add Book</i></a>
                     </p>
-                    <p class="my-5">
-                        <a href="/BookStore/sort" class="btn btn-primary"><i
-       class="fas fa-user-plus ml-2"> Sort Books</i></a>
-                    </p>
+                    
                     <div class="col-md-10">
                         <h2 th:case="null">No Books yet!</h2>
                         <div th:case="*">
