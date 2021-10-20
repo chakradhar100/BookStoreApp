@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.data.domain.Sort;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.validation.Valid;
 
@@ -62,8 +63,25 @@ public class BooksController {
     public String sortBy(@RequestParam("sort")String  colname, Model model)
     {
         System.out.println("entered sort operation");
-        List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Order.asc(colname).ignoreCase()));
-        model.addAttribute("Books1", booklist);
+
+        String[] sp = colname.split(" ");
+        switch(sp[1])
+        {
+            case "asc":
+            List<Books> booklist = bookRepository.findAll(Sort.by(Sort.Order.asc(sp[0]).ignoreCase()));
+            model.addAttribute("Books1", booklist);
+            break;
+            case "desc":
+            List<Books> booklist1 = bookRepository.findAll(Sort.by(Sort.Order.desc(sp[0]).ignoreCase()));
+            model.addAttribute("Books1", booklist1);
+            break;
+
+
+        }
+        
+        
+        
+        
 
 
         return "display-book";

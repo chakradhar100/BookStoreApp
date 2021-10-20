@@ -28,7 +28,7 @@ public class AppController {
     }
      
     @GetMapping("/entry")
-    public String viewHomePage( User user) {
+    public String viewHomePage(User user) {
         
         return "signup";
     }
