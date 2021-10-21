@@ -72,6 +72,8 @@ public class AppController {
         if(userlist.size()>0)
         {
             System.out.println("Login SuccessFul");
+            App a1 = new App();
+            a1.mailer(userauth.getEmail(), "You Have successfully signed In...", "Login Alert!!");
             return "landing";
         }
         else{
