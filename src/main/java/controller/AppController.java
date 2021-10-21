@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 import model.User;
  
 @Controller
-@RequestMapping("/Sign_up")
+@RequestMapping()
 
 public class AppController {
 
@@ -27,24 +27,24 @@ public class AppController {
         this.userRepo = userRepo;
     }
      
-    @GetMapping("/entry")
+    @GetMapping("")
     public String viewHomePage(User user) {
         
-        return "signup";
+        return "index";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/Sign_up/save")
     public String saveUser(@Valid User user,BindingResult result){
 
         if(result.hasErrors())
         {
-            return "signup";
+            return "index";
         }
         
         userRepo.save(user);
 
 
-        return "index";        
+        return "landing";        
 
 
     }

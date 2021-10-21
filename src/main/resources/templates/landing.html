@@ -1,0 +1,243 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Welcome to BookStore</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		button {
+  
+  background-color: #00008B;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px 50px;
+  
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  opacity: 0.9;
+  border-radius:10px;
+}
+
+button:hover {
+  opacity:1;
+  background-color: #4169E1;
+  font-size: 120%;
+  box-shadow: 0 0 1px 1px red;
+  
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 1000px;
+  padding: 20px;
+  width: 320px;
+  line-height:0.4;
+}
+
+p{
+	color:white;
+	font-family:Courier; 
+	color:white; 
+	font-size: 15px;
+}
+
+p.small{
+	line-height:0.4;
+}
+
+div.ex1 {
+  
+  margin: 30px 40px 30px 40px;
+  border: 1px solid #00008B;
+  padding: 30px 30px;
+  padding-bottom: 120px;
+  border-radius: 10px;
+}
+body {
+  font-family: "Sofia", sans-serif;
+}
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #00008B;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #003366;
+  color: white;
+  padding: 16px;
+  
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: #000099 ;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #00008B;
+  border: none;
+  color: white;
+  padding: 10px 26px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover {
+  opacity:1;
+  background-color: #4169E1;
+  font-size: 120%;
+  box-shadow: 0 0 1px 1px red;
+  
+}
+
+select {
+border-radius: 10px;
+  width: 60%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input[type=text] {
+  background-color: white;
+  border-radius:10px;
+  background-position: 18px 14px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  padding: 14px;
+}
+
+	</style>
+  </head>
+  <body class="text-center">
+  
+  <div class="navbar">
+	<a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+
+	<!--
+	<a href="#"><i class="fa fa-fw fa-envelope"></i> Update</a>
+	<a href="#"><i class="fa fa-fw fa-user"></i> Remove</a>
+	-->
+</div>
+  <!--
+  <h2>Register</h2>
+
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  --> 
+
+  <center>
+    <div class="clearfix">
+      <div class="ex1">
+        <h1 align=text-center style ="color: #003366">Books Details</h1>
+        <br>
+        <a href="/BookStore/signup"><button type="submit" class="signupbtn">Add Books</button></a>
+        <a href="/BookStore/list"><button type="submit" class="signupbtn">Display Books</button></a>
+        <br>
+	      <br>
+        
+
+			
+			<br>
+          <form action="" th:action="@{/BookStore/search}" method="GET">
+		  
+            <label><h3>Enter Book To Search</h3></label><br>
+            <input type="text" name="book" placeholder="enter book name"><br>
+            <input type="submit" value="Search">
+          </form>
+
+
+          
+	
+	
+	
+	
+		  </div>
+    </div>
+  </center>
+  </body>
+</html>

@@ -35,6 +35,12 @@ public class BooksController {
 
     }
 
+    @GetMapping("/home")
+    public String goToHome()
+    {
+        return "landing";
+    }
+
     @GetMapping("/signup")
     public String showSignUpForm(Books book) {
         System.out.println("entered signup ");
