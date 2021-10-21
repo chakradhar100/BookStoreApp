@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import java.util.*;
 
 import model.User;
+import model.Userauth;
  
 @Controller
 @RequestMapping()
@@ -39,7 +40,7 @@ public class AppController {
     }
 
     @GetMapping("/Sign_up/loginpage")
-    public String goToLogin()
+    public String goToLogin(Userauth userauth)
     {
         return "login";
     }
@@ -55,15 +56,19 @@ public class AppController {
         userRepo.save(user);
 
 
-        return "login";        
+        return "redirect:/Sign_up/loginpage";        
 
 
     }
 
-    @GetMapping("/Sign_up/login")
-    public String loginUser(@RequestParam("email") String email,@RequestParam("password") String password)
+    @PostMapping("/Sign_up/login")
+    public String loginUser(@Valid Userauth userauth,BindingResult result)
     {
-        List<User> userlist = userRepo.findByEmailAndPassword(email,password);
+        if(result.hasErrors())
+        {
+            return "redirect:/Sign_up/loginpage";
+        }
+        List<User> userlist = userRepo.findByEmailAndPassword(userauth.getEmail(),userauth.getPassword());
         if(userlist.size()>0)
         {
             System.out.println("Login SuccessFul");
@@ -73,7 +78,7 @@ public class AppController {
             System.out.println("Incorrect Username Or PassWord");
         }
 
-        return "login";
+        return "redirect:/Sign_up/loginpage";
 
         
     }
