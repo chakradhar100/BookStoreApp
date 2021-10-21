@@ -24,6 +24,7 @@ import model.Userauth;
 @RequestMapping()
 
 public class AppController {
+    App a1 = new App();
 
     @Autowired
     private UserRepository userRepo;
@@ -54,6 +55,11 @@ public class AppController {
         }
         
         userRepo.save(user);
+        System.out.println(user.getEmail());
+        String message = "Congratulations!! " + user.getFirstName() + user.getLastName() + "\n\nYou have successfully Signed Up Welcome To Book Store";
+        
+        a1.mailer(user.getEmail(), message,"Welcome To Book Store");
+        System.out.println(message);
 
 
         return "redirect:/Sign_up/loginpage";        
@@ -72,7 +78,7 @@ public class AppController {
         if(userlist.size()>0)
         {
             System.out.println("Login SuccessFul");
-            App a1 = new App();
+            
             a1.mailer(userauth.getEmail(), "You Have successfully signed In...", "Login Alert!!");
             return "landing";
         }
