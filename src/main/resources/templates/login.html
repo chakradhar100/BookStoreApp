@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>
+            Login Page
+        </title>
+    </head>
+    <body>
+        <form th:action="@{/Sign_up/login}" method="GET">
+            <label>Enter Your Email</label><br>
+            <input type="email" name="email" placeholder="Enter Your Email"><br><br>
+            <input type="password" name="password"  placeholder="Enter Your PassWord"><br>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
