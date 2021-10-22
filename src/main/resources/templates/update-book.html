@@ -48,8 +48,8 @@
   }
 }
 div.ex1{
-	style="width: 50%; 
-	margin: 0 auto 0 420px;"
+	width: 50%; 
+	margin: 0 auto 0 420px;
 }
 
 input[type=text]{
@@ -80,54 +80,54 @@ button{
                             </div>-->
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Price</label><br>
-                                <input type="text" th:field="*{bprice}" value="bprice"><br>
+                                <input type="text" th:field="*{bprice}" value="bprice" required><br>
                                 <span th:if="${#fields.hasErrors('bprice')}" th:errors="*{bprice}" class="text-danger">A</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Name</label><br>
-                                <input type="text" th:field="*{bname}" value="bname"><br>
+                                <input type="text" th:field="*{bname}" value="bname" required><br>
                                 <span th:if="${#fields.hasErrors('bname')}" th:errors="*{bname}" class="text-danger">B</span>
                             </div>
                             
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Book Lang</label><br>
-                                <input type="text" th:field="*{blang}" value="blang"><br>
+                                <input type="text" th:field="*{blang}" value="blang" required><br>
                                 <span th:if="${#fields.hasErrors('blang')}" th:errors="*{blang}" class="text-danger">C</span>
                             </div>
                             
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">  
                                 <label>Enter Author Code</label><br>
-                                <input type="text" th:field="*{authcode}" value="authcode"><br>
+                                <input type="text" th:field="*{authcode}" value="authcode" required><br>
                                 <span th:if="${#fields.hasErrors('authcode')}" th:errors="*{authcode}" class="text-danger">E</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Author First Name</label><br>
-                                <input type="text" th:field="*{authfname}" value="authfname"><br>
+                                <input type="text" th:field="*{authfname}" value="authfname" required><br>
                                 <span th:if="${#fields.hasErrors('authfname')}" th:errors="*{authfname}" class="text-danger">F</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Author Last Name</label><br>
-                                <input type="text" th:field="*{authlname}" value="authlname"><br>
+                                <input type="text" th:field="*{authlname}" value="authlname" required><br>
                                 <span th:if="${#fields.hasErrors('authlname')}" th:errors="*{authlname}" class="text-danger">G</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Code</label><br>
-                                <input type="text" th:field="*{pcode}" value="pcode"><br>
+                                <input type="text" th:field="*{pcode}" value="pcode" required><br>
                                 <span th:if="${#fields.hasErrors('pcode')}" th:errors="*{pcode}" class="text-danger">H</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher First Name</label><br>
-                                <input type="text" th:field="*{pfname}" value="pfname"><br>
+                                <input type="text" th:field="*{pfname}" value="pfname" required><br>
                                 <span th:if="${#fields.hasErrors('pfname')}" th:errors="*{pfname}" class="text-danger">I</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Last Name</label><br>
-                                <input type="text" th:field="*{plname}" value="plname"><br>
+                                <input type="text" th:field="*{plname}" value="plname" required><br>
                                 <span th:if="${#fields.hasErrors('plname')}" th:errors="*{plname}" class="text-danger">J</span>
                             </div>
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
                                 <label>Enter Publisher Country</label><br>
-                                <input type="text" th:field="*{pcountry}" value="pcountry"><br>
+                                <input type="text" th:field="*{pcountry}" value="pcountry" required><br>
                                 <span th:if="${#fields.hasErrors('pcountry')}" th:errors="*{pcountry}" class="text-danger">K</span>
                             </div>
                             <br>
@@ -137,7 +137,7 @@ button{
 
 
                             <div class="form-group col-md-8" style="width: 50%; margin: 0 auto 0 420px;">
-                              <br> <input type="submit" class="btn btn-primary" value="Update Book">
+                              <br><br> <input type="submit" class="btn btn-primary" value="Update Book">
                             </div>
                         </div>
                     </form>
